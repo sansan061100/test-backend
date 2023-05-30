@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('penjualan', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->string('transaction_number')->unique();
-            $table->foreignId('marketing_id')->constrained('marketting')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('marketting_id')->constrained('marketting')->onDelete('cascade')->onUpdate('cascade');
             $table->date('date');
             $table->integer('cargo_fee')->unsigned();
             $table->integer('total_balance')->unsigned();

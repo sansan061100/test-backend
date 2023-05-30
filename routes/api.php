@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Api\KomisiController;
+use App\Http\Controllers\Api\PembayaranController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +16,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('komisi', [KomisiController::class, 'getKomisi']);
+Route::post('pembayaran', [PembayaranController::class, 'store']);
